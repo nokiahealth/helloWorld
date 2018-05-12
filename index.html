@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Title -->
+		<title>Nokia Health API - HelloWorld</title>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/favicon/favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">	
+		<link rel="manifest" href="config/manifest.json">
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/nokia.css">
+		<!-- Javascript -->
+		<script type="text/javascript">
+			function start() {
+				//ResponseType must be 'code'
+				var responseType = "code";
+				//Redirect URL after Authorization
+				var redirectURL = "";
+				//ClientID from your App
+				var clientId = "";
+				//Scope: Permissions
+				var scope = "user.info,user.metrics,user.activity";
+				//State: Random value for security
+				var state = "";
+				
+				var url = "https://account.health.nokia.com/oauth2_user/authorize2";
+				url += "?response_type=" + responseType;
+				url += "&redirect_uri=" + redirectURL;
+				url += "&client_id=" + clientId;
+				url += "&scope=" + scope;
+				url += "&state=" + state;
+				
+				location.href = url;
+			}	
+		</script>
+	</head>
+	<body>
+		<h1 class="title">Buttons</h1>
+			<div id="button" class="button" onClick="start()">Start Application</div>
+			<div id="button" class="button">Send Data</div>
+		<h1 class="title">Checkboxes</h1>
+			<label class="container1">Allow Access<input type="checkbox"><span class="checkmark1"></span></label>
+			<label class="container1">Accept Terms<input type="checkbox"><span class="checkmark1"></span></label>
+		<h1 class="title">Radio Buttons</h1>
+			<label class="container2">Allow Access<input type="checkbox"><span class="checkmark2"></span></label>
+			<label class="container2">Accept Terms<input type="checkbox"><span class="checkmark2"></span></label>
+		<h1 class="title">Text Input</h1>
+			<input type="text" class="textInput" placeholder="Please enter some text">
+			<input type="text" class="textInput">
+	</body>
+</html>
